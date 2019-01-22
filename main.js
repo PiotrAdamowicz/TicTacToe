@@ -1,5 +1,4 @@
 //DOM ELEMENTS HOOKS
-// const fields = [...document.querySelectorAll("div.fieldes>div")];
 const fields = [...document.getElementsByClassName("field")];
 const whosPlaying = document.querySelector("h3>span");
 const endDiv = document.getElementById("end");
@@ -73,19 +72,22 @@ whosPlaying.innerHTML = `<span>${player1}</span>`;
 for (let i = 0; i < fields.length; i++) {
   fields[i].addEventListener("click", function(e) {
     if (whosMoveIsIt === 1 && e.target.innerHTML === "") {
+      movesMade++;
       e.target.innerHTML = player1;
       e.target.style.color = "#eee";
       fieldeLog.splice(i, 1, player1);
       whosMoveIsIt++;
       whosPlaying.innerHTML = `<span>${player2}</span>`; //display for whos turn it is
     } else if (whosMoveIsIt === 2 && e.target.innerHTML === "") {
+      movesMade++;
       e.target.innerHTML = player2;
       e.target.style.color = "black";
       fieldeLog.splice(i, 1, player2);
       whosMoveIsIt--;
       whosPlaying.innerHTML = `<span>${player1}</span>`;
     }
-    movesMade++;
+
+    console.log(movesMade);
 
     //Checking for wins
     if (movesMade >= 5) {

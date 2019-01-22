@@ -55,8 +55,6 @@ div > div:nth-child(even) {
   height: 80vh;
   width: 100vw;
   background: rgba(0, 0, 0, 0.6);
-  /* background-color: #000;
-  opacity: 0.6; */
 }
 .end h1 {
   position: absolute;
