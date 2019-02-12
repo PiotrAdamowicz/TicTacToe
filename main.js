@@ -31,10 +31,10 @@ colors = [
 
 //LOGIC IN SEPARATE FUNCTIONS
 function colorFieldes() {
-  for (i = 0; i < colors.length + 1; i++) {
-    fields[i].style.backgroundColor =
+  fields.map(field => {
+    field.style.backgroundColor =
       colors[Math.floor(Math.random() * colors.length)];
-  }
+  });
 }
 
 function resetField() {
@@ -86,8 +86,6 @@ for (let i = 0; i < fields.length; i++) {
       whosMoveIsIt--;
       whosPlaying.innerHTML = `<span>${player1}</span>`;
     }
-
-    console.log(movesMade);
 
     //Checking for wins
     if (movesMade >= 5) {
@@ -148,4 +146,4 @@ for (let i = 0; i < fields.length; i++) {
 //Restart Button
 btnRestart.addEventListener("click", resetField);
 
-// colorFieldes();
+colorFieldes();
