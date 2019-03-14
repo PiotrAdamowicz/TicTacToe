@@ -146,4 +146,4 @@ for (let i = 0; i < fields.length; i++) {
 //Restart Button
 btnRestart.addEventListener("click", resetField);
 
-colorFieldes();
+// colorFieldes();
